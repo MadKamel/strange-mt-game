@@ -14,7 +14,9 @@ core.register_item("strange_base:reinforcement", {
 		end
 		local pos  = minetest.get_pointed_thing_position( pointed_thing, false );
 		local node = minetest.get_node_or_nil(pos);
-		minetest.swap_node(pos, {name = "strange_base:reinf_orang"})
+		if (node.name == "strange_base:orang") then
+			minetest.swap_node(pos, {name = "strange_base:reinf_orang"})
+		end
 	end
 })
 
