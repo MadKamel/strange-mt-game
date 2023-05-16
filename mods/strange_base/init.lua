@@ -20,6 +20,13 @@ core.register_item("strange_base:reinforcement", {
 	end
 })
 
+core.register_item("strange_base:loose_seed_pod", {
+	type = "craft",
+	description = "Seed Pod",
+	wield_image = "node9.png",
+	inventory_image = "node9.png"
+})
+
 
 
 -- node registration
