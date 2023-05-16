@@ -1,8 +1,21 @@
 -- item registration
 
 core.register_item("strange_base:reinforcement", {
-	description = "Orang",
-	tiles = {"node19.png"},
+	type = "craft",
+	description = "Reinforcement",
+	wield_image = "node43.png",
+	inventory_image = "node43.png",
+	on_place = function(itemstack, placer, pointed_thing)
+		if (placer == nil or pointed_thing == nil) then
+			return itemstack; -- nothing consumed
+		end
+		if (pointed_thing.type ~= "node") then
+			return nil;
+		end
+		local pos  = minetest.get_pointed_thing_position( pointed_thing, false );
+		local node = minetest.get_node_or_nil(pos);
+		minetest.swap_node(pos, {name = "strange_base:reinf_orang"})
+	end
 })
 
 
